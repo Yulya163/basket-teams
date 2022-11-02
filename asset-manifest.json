@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/basket-teams/static/css/main.bd13ae65.css",
+    "main.js": "/basket-teams/static/js/main.c6fdf199.js",
+    "static/js/787.fd1c53be.chunk.js": "/basket-teams/static/js/787.fd1c53be.chunk.js",
+    "static/media/logo200.png": "/basket-teams/static/media/logo200.01f80cee3ab122a21324.png",
+    "index.html": "/basket-teams/index.html",
+    "main.bd13ae65.css.map": "/basket-teams/static/css/main.bd13ae65.css.map",
+    "main.c6fdf199.js.map": "/basket-teams/static/js/main.c6fdf199.js.map",
+    "787.fd1c53be.chunk.js.map": "/basket-teams/static/js/787.fd1c53be.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bd13ae65.css",
+    "static/js/main.c6fdf199.js"
+  ]
+}
