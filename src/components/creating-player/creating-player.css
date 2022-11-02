@@ -1,0 +1,34 @@
+.create-player-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;  
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    background: #eee;
+}
+
+.input-name {
+    height: 100%;
+    width: 65%;
+    border: 1px solid #dedede;
+    border-radius: 4px;
+    padding: 0 10px;
+    font-size: 24px;
+    color: #1e1c1c;    
+} 
+
+.input-name::placeholder {
+    color: #bebebe;
+    font-size: 16px;
+}
+
+.add-btn {    
+    background: #5bc55b;
+  }
+  
+.add-btn:hover {
+    background: green;
+}

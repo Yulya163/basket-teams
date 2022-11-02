@@ -1,0 +1,26 @@
+.greeting {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    opacity: 0.8; 
+}
+
+.greeting--title::before {    
+    content: url('./user15.png');
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;    
+}
+
+.exit-btn {    
+    transition: 0.5s all;    
+    text-decoration: underline;
+    margin-left: 10px;     
+}
+
+.exit-btn::before {
+    content: url('./exit15.png');
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 4px;
+}

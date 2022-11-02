@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;  
+}
+h4 {
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hide {
+  display: none;
+}
+
+.logo {
+  height: 40vmin;
+  pointer-events: none;
+  width: 35px;
+  height: 35px;
+}
+
+.incorrect {
+  font-size: 14px;
+  margin: 0 0 15px 0;
+  color: red;
+  text-align: center;
+}
+  
+.btn {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 4px;
+  font-size: 24px;
+  transition: 0.5s all;
+  color: #fff;    
+}
+
+.disabled {
+  opacity: 0.4;
+}
+
+.label-checkbox {	 
+  display: block;
+}
+
+.label-checkbox input[type=checkbox] { 
+  display: none;
+}
+
+.label-checkbox-button .label-span {
+  width: 100%;						
+  line-height: 20px;    
+}
+
+.label-checkbox-button .label-span::before {
+  content: "High";
+  display: inline-block; 
+  font-size: 12px;                     
+  background: #dedede;
+  border-radius: 4px;
+  padding: 0 10px;            
+  vertical-align: baseline;            				    
+  line-height: 30px;	
+}
+
+.label-checkbox-button .high:checked + .label-span::before {   
+  font-weight: bold;
+  background: orange;
+}	
+
+.btns-wrapper {
+  display: flex;
+}
+
+.btns-wrapper > *:not(:last-child) {
+  margin-right: 10px;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes logo-shift {
+  from {
+    left: 0;
+  }
+  to {
+    left: 100%;
+    opacity: 0;
+  }
+}

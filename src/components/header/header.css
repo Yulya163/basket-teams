@@ -1,0 +1,19 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+  background-color: #1e1c1c;
+  color: orange;
+}
+
+.header--logo {
+  margin-right: 15px;
+  animation: logo-spin infinite 20s linear;
+}
+.header--title {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+

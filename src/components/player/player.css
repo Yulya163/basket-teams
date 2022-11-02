@@ -1,0 +1,68 @@
+.player {
+    height: 40px;
+    font-size: 18px;  
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 2px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.label-checkbox-switch .label-span {
+    width: 100%;						
+    line-height: 20px;
+    position: relative;
+}
+
+.label-checkbox-switch .label-span::before {
+    content: ''; 
+    display: inline-block;
+    box-sizing: border-box;
+    width: 45px;
+    height: 24px;
+    background-color: white;
+    border: 1px solid #dedede;
+    border-radius: 15px;
+    margin-right: 10px;
+    vertical-align: baseline;
+    text-align: center;						    
+    line-height: 30px;						    
+    color: #1e1c1c;
+    position: relative;      
+}
+
+.label-checkbox-switch .label-span::after {
+    content: ''; 
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background: #dedede;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(5px, -1px);    
+}
+
+.label-checkbox-switch .active:checked + span {
+    font-weight: 700;
+}	
+					
+.label-checkbox-switch .active:checked + span::after { 
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 100%;
+    background: #ffa50087;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(24px, -1px);    
+}		
+
+.delete-btn {
+    background: #ea7575; 
+    font-size: 16px; 
+}
+       

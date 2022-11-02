@@ -1,0 +1,56 @@
+.teams-players-title {
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0;
+}
+
+.teams-players {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.team-players {
+    border-radius: 10px;
+    width: 40%;
+    border: 3px solid #fff;
+    padding: 10px;
+    margin: 3px;
+    font-size: 14px;
+    box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.1),
+    -23px 0 20px -23px rgba(0, 0, 0, 0.2),
+    23px 0 20px -23px rgba(0, 0, 0, 0.2),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+    background: #1e1c1c;
+    color: #fff;
+}
+
+.team-players .reserve {
+    font-style: italic;
+    color: #969696;
+}
+
+.team-players ul li::before {
+    content: '';
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 4px;
+    background-image: url('./logo200.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+.high::before {
+    content: "High";
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    background: orange;
+    border-radius: 4px;
+    padding: 1px 4px;
+    margin-left: 5px;
+    color: #1e1c1c;
+  }

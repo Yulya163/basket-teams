@@ -1,0 +1,27 @@
+.players--total {
+    margin-bottom: 15px;
+    text-align: end;
+    background: #faf5f5;
+    padding: 5px 10px;
+    border-radius: 4px;   
+    font-size: 14px; 
+    position: sticky;
+    top: 70px;
+    z-index: 1;
+    box-shadow: 1px 1px 5px rgb(0 0 0 / 10%);
+}
+
+.players--total span {
+    font-weight: bold;
+    font-size: 14px;
+}  
+
+.delete-all-btn {   
+    display: block; 
+    margin: 15px 0 15px auto;  
+    border: none; 
+    transition: 0.5s all;
+    background: none;
+    color: #969696;
+    text-decoration: underline;     
+}
