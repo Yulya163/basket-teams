@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/basket-teams/static/css/main.7de752a7.css",
-    "main.js": "/basket-teams/static/js/main.24949b28.js",
+    "main.js": "/basket-teams/static/js/main.0cdeb410.js",
     "static/js/787.fd1c53be.chunk.js": "/basket-teams/static/js/787.fd1c53be.chunk.js",
     "static/media/logo200.png": "/basket-teams/static/media/logo200.01f80cee3ab122a21324.png",
     "static/media/eye-open.png": "/basket-teams/static/media/eye-open.b17012f32bad9e6327d0.png",
     "index.html": "/basket-teams/index.html",
     "main.7de752a7.css.map": "/basket-teams/static/css/main.7de752a7.css.map",
-    "main.24949b28.js.map": "/basket-teams/static/js/main.24949b28.js.map",
+    "main.0cdeb410.js.map": "/basket-teams/static/js/main.0cdeb410.js.map",
     "787.fd1c53be.chunk.js.map": "/basket-teams/static/js/787.fd1c53be.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7de752a7.css",
-    "static/js/main.24949b28.js"
+    "static/js/main.0cdeb410.js"
   ]
 }
