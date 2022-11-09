@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PlayerType } from '../../types/player';
 import { updatePlayer } from '../../services/players-service/update-player';
 import { deletePlayer } from '../../services/players-service/delete-player';
+import {shake} from '../../utils';
 
 import './player.css';
 
@@ -32,7 +33,8 @@ function Player({player, updatePlayersList}: PlayerProps): JSX.Element {
                         handleCheckboxChange(setIsActive);
                         updatePlayer(
                             {...player, active: !isActive},                            
-                            updatePlayersList
+                            updatePlayersList,
+                            shake
                         );
                     }}                     
                 />  
@@ -51,7 +53,8 @@ function Player({player, updatePlayersList}: PlayerProps): JSX.Element {
                             handleCheckboxChange(setIsHigh);
                             updatePlayer(                               
                                 {...player, high: !isHigh},
-                                updatePlayersList
+                                updatePlayersList,
+                                shake
                             );
                         }}                     
                     />                          
@@ -60,10 +63,11 @@ function Player({player, updatePlayersList}: PlayerProps): JSX.Element {
                     ></span>                
                 </label>
                 <button 
-                    className='btn delete-btn'
+                    className='btn delete-btn shaked-element'
                     onClick={() => deletePlayer(
                         id,
-                        updatePlayersList
+                        updatePlayersList,
+                        shake
                     )}
                 >X</button>
             </div>               

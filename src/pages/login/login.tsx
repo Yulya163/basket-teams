@@ -3,6 +3,9 @@ import { MIN_LOGIN_VALUE_LENGTH, MAX_LOGIN_VALUE_LENGTH } from '../../consts';
 import { userRegister } from '../../services/user-service/user-register';
 import { saveToken } from '../../services/token';
 import './login.css';
+import eyeClose from './eye-close.png';
+import eyeOpen from './eye-open.png';
+import { shake } from '../../utils';
 
 function Login(): JSX.Element {   
     const [username, setUsername] = useState('');
@@ -19,12 +22,12 @@ function Login(): JSX.Element {
         if (isShowPassword) {          
             passwordField?.setAttribute('type', 'text');
             if(passwordImg !== null) {
-                passwordImg.src = 'img/eye-open.png'
+                passwordImg.src = `${eyeOpen}`
             }        
         } else {
             passwordField?.setAttribute('type', 'password');
             if(passwordImg !== null) {
-                passwordImg.src = 'img/eye-close.png'
+                passwordImg.src = `${eyeClose}`
             }                  
         }   
     }, [isShowPassword])
@@ -90,17 +93,20 @@ function Login(): JSX.Element {
                         onChange={handleClickCheckbox}
                         checked={isShowPassword}
                     />
-                    <img src='img/eye-close.png' className='pass-img' alt='eye-close'/>
+                    <img src={eyeClose} className='pass-img' alt='eye'/>
                 </label>
             </div>           
             <button
-                className='login-btn'
+                className='login-btn shaked-element'
                 onClick={(evt) => {
                     evt.preventDefault();                         
                     userRegister(                        
                         {username, password},
                         saveToken,
-                        () => setMessage('Sorry, this name is already registered'),                        
+                        () => {
+                            setMessage('Sorry, this name is already registered');
+                            shake();
+                        },                        
                     )                
                 }}
             >Register</button>           

@@ -2,7 +2,11 @@ import { PlayerType } from '../../types/player';
 import { BASIC_URL, PlayerAPIRoute } from '../../consts';
 import { getToken } from '../../services/token';
 
-export const updatePlayer = (body: PlayerType, onSuccess: () => void) => {    
+export const updatePlayer = (
+    body: PlayerType, 
+    onSuccess: () => void,
+    onError: () => void
+    ) => {    
     fetch(`${BASIC_URL}${PlayerAPIRoute.UpdatePlayer}`, {
         method: 'POST',        
         headers: {            
@@ -20,5 +24,8 @@ export const updatePlayer = (body: PlayerType, onSuccess: () => void) => {
         .then(() => {            
             onSuccess();
         })
-        .catch(() => console.error('error update'))
+        .catch(() => {
+            console.error('error update');
+            onError();
+        })
 }

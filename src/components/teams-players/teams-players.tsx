@@ -1,4 +1,4 @@
-import { TeamsOption, TeamType } from '../../types/team'
+import { TeamsOption, TeamType } from '../../types/team';
 
 import './teams-players.css';
 

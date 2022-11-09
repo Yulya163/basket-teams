@@ -2,7 +2,7 @@ import './error.css';
 
 function Error(): JSX.Element {
     return (
-        <div className="error">
+        <div className="error error-center-position">
             Something went wrong. Please try again later
         </div>
     )

@@ -3,6 +3,7 @@ import { getTeamsSizes } from '../../services/teams-service/teams-sizes';
 import { getTeams } from '../../services/teams-service/teams';
 import { TeamType, TeamsOption } from '../../types/team';
 import { PlayersType } from '../../types/player';
+import {shake} from '../../utils';
 
 import './creating-teams-sizes.css';
 
@@ -16,25 +17,37 @@ type CreatingTeamsSizesProps = {
     setOptionNumber: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function CreatingTeamsSizes({players, isShowTeamsBlock, isShowTeamsPlayers, setIsShowTeamsBlock, setIsShowTeamsPlayers, setTeamsPlayers, setOptionNumber}: CreatingTeamsSizesProps): JSX.Element {
+function CreatingTeamsSizes(props: CreatingTeamsSizesProps): JSX.Element {
+    const {
+        players, 
+        isShowTeamsBlock, 
+        isShowTeamsPlayers, 
+        setIsShowTeamsBlock, 
+        setIsShowTeamsPlayers, 
+        setTeamsPlayers, 
+        setOptionNumber
+    } = props;
     const [teamsSizes, setTeamsSizes] = useState([]); 
 
     const availablePlayers = players.filter(player => player.active);
 
     const isDisabled = () => availablePlayers.length < 3 || availablePlayers.length > 20;  
     
-    const mainHeight = document.querySelector('.main')?.clientHeight;
+    const mainHeight = document.querySelector('.main')?.clientHeight;      
 
     return (
         <div className='teams-sizes'>
             <button 
-                className={isDisabled() ? 'start-create-btn disabled' : 'start-create-btn' }
+                className={isDisabled() ? 'start-create-btn shaked-element disabled' : 'start-create-btn shaked-btn' }
                 disabled={isDisabled() ? true : false }
                 onClick={() => {
                     setTimeout(() => {
                         window.scrollTo(0, mainHeight || 9999)
                     }, 1000);  
-                    getTeamsSizes(setTeamsSizes);
+                    getTeamsSizes(
+                        setTeamsSizes,
+                        shake
+                    )
                     setIsShowTeamsBlock(true);                 
                 }}
             >

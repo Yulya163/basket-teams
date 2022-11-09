@@ -8,6 +8,7 @@ import Players from '../../components/players/players';
 import CreatingTeamsSizes from '../../components/creating-teams-sizes/creating-teams-sizes';
 import TeamsPlayers from '../../components/teams-players/teams-players';
 import Loading from '../../pages/loading/loading';
+import {shake} from '../../utils';
 
 import './main.css';
 
@@ -24,11 +25,11 @@ function Main(): JSX.Element {
     const init = async () => {
         await getUserName(            
             setUserName,        
-            () => setUserName('my friend')
+            () => setUserName('buddy')
         );
         await getPlayersList(
             setPlayers,
-            setIsError
+            () => setIsError(true)
         );    
         await setIsDataLoaded(false);
     }
@@ -40,7 +41,7 @@ function Main(): JSX.Element {
     const updatePlayersList = () => {
         getPlayersList(
             setPlayers,
-            setIsError
+            () => shake()
         );    
         setIsShowTeamsBlock(false);  
         setIsShowTeamsPlayers(false);  

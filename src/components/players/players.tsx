@@ -2,6 +2,7 @@ import { PlayersType, PlayerType } from '../../types/player';
 import Player from '../player/player';
 import './players.css';
 import { deletePlayer } from '../../services/players-service/delete-player';
+import {shake} from '../../utils';
 
 type PlayersProps = {
     players: PlayersType | never[];
@@ -23,13 +24,14 @@ function Players({players, updatePlayersList}: PlayersProps): JSX.Element {
             if(player.id) {
                 deletePlayer(
                 player.id,
-                updatePlayersList
+                updatePlayersList,
+                shake
             )}         
         })
     }
 
     return (
-        <div className='players'>
+        <div className='players shaked-element'>
             <div className='players--total'>
                 Total available players: <span>{availablePlayers.length}</span>
             </div>

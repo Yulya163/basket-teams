@@ -4,7 +4,8 @@ import { getToken } from '../../services/token';
 
 export const addPlayer = (    
     body: PlayerType,    
-    onSuccess: (player: PlayerType) => void    
+    onSuccess: (player: PlayerType) => void,
+    onError: () => void  
 ) => {    
     fetch(`${BASIC_URL}${PlayerAPIRoute.AddPlayer}`, {
         method: 'POST',        
@@ -21,5 +22,8 @@ export const addPlayer = (
         throw new Error('error');
       })      
       .then((player) => onSuccess(player))
-      .catch(() => console.error('error delete'))
+      .catch(() => {
+        console.error('error add');
+        onError();
+    })
 }

@@ -3,7 +3,8 @@ import { getToken } from '../../services/token';
 
 export const deletePlayer = (    
     body: number | undefined,    
-    onSuccess: () => void    
+    onSuccess: () => void,
+    onError: () => void    
 ) => {    
     fetch(`${BASIC_URL}${PlayerAPIRoute.DeletePlayer}`, {
         method: 'POST',        
@@ -20,5 +21,8 @@ export const deletePlayer = (
             throw new Error('error');
         })      
         .then(() => onSuccess())
-        .catch(() => console.error('error delete'))
+        .catch(() => {
+            console.error('error delete');
+            onError();
+        })
 }
