@@ -30,7 +30,7 @@ function Login(): JSX.Element {
                 passwordImg.src = `${eyeClose}`
             }                  
         }   
-    }, [isShowPassword])
+    }, [isShowPassword, passwordField, passwordImg])
 
     const checkLogin = (evt: FieldEvent) => {  
         const valueLength = evt.target.value.length;
