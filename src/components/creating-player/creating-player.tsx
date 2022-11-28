@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { addPlayer } from '../../services/players-service/add-player';
-import {shake} from '../../utils';
 import './creating-player.css';
 
 type InputTypeProps = {
@@ -29,8 +28,7 @@ function CreatingPlayer ({updatePlayersList}: InputTypeProps): JSX.Element {
                 window.scrollTo(0, 0);    
                 addPlayer(
                     {name, high, active: true},
-                    updatePlayersList,
-                    shake
+                    updatePlayersList
                 );
                 setName('');
                 setHigh(false);                    

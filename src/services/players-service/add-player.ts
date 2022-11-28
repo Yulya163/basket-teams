@@ -1,17 +1,18 @@
 import { PlayerType } from '../../types/player';
 import { BASIC_URL, PlayerAPIRoute } from '../../consts';
 import { getToken } from '../../services/token';
+import { shake } from '../../utils';
 
 export const addPlayer = (    
     body: PlayerType,    
-    onSuccess: (player: PlayerType) => void,
-    onError: () => void  
+    onSuccess: (player: PlayerType) => void     
 ) => {    
     fetch(`${BASIC_URL}${PlayerAPIRoute.AddPlayer}`, {
         method: 'POST',        
         headers: {            
             'Content-Type': 'application/json',   
-            'Authorization': `Basic ${getToken()}`,         
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${getToken()}`,         
         },
         body: JSON.stringify(body),
     })
@@ -22,8 +23,5 @@ export const addPlayer = (
         throw new Error('error');
       })      
       .then((player) => onSuccess(player))
-      .catch(() => {
-        console.error('error add');
-        onError();
-    })
+      .catch(() => shake())
 }

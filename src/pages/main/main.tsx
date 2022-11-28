@@ -8,40 +8,39 @@ import Players from '../../components/players/players';
 import CreatingTeamsSizes from '../../components/creating-teams-sizes/creating-teams-sizes';
 import TeamsPlayers from '../../components/teams-players/teams-players';
 import Loading from '../../pages/loading/loading';
-import {shake} from '../../utils';
 
 import './main.css';
 
 function Main(): JSX.Element {
     const [userName, setUserName] = useState('buddy');
     const [players, setPlayers] = useState([]); 
-    const [isDataLoaded, setIsDataLoaded] = useState(true);      
-    const [isError, setIsError] = useState(false);      
+    const [isDataLoaded, setIsDataLoaded] = useState(true);
+    const [errMessage, setErrMessage] = useState('');      
     const [isShowTeamsBlock, setIsShowTeamsBlock] = useState(false);    
     const [isShowTeamsPlayers, setIsShowTeamsPlayers] = useState(false);  
     const [teamsPlayers, setTeamsPlayers] = useState({teams: []});  
     const [optionNumber, setOptionNumber] = useState(''); 
 
-    const init = async () => {
+    const init = async () => {        
         await getUserName(            
             setUserName,        
             () => setUserName('buddy')
         );
         await getPlayersList(
             setPlayers,
-            () => setIsError(true)
-        );    
+            setErrMessage
+        );         
         await setIsDataLoaded(false);
     }
 
     useEffect(() => {    
         init();
-    }, []);  
+    }, [userName]);  
 
     const updatePlayersList = () => {
         getPlayersList(
             setPlayers,
-            () => shake()
+            setErrMessage
         );    
         setIsShowTeamsBlock(false);  
         setIsShowTeamsPlayers(false);  
@@ -52,7 +51,7 @@ function Main(): JSX.Element {
             <Greeting userName={userName}/>            
             {
                 !isDataLoaded ?                 
-                    !isError ?
+                    errMessage === '' ?
                     <>
                         <CreatingPlayer 
                             updatePlayersList={updatePlayersList}
@@ -76,7 +75,7 @@ function Main(): JSX.Element {
                             optionNumber={optionNumber}
                         />
                     </> :
-                    <Error/> : 
+                    <Error errMessage={errMessage}/> : 
                 <Loading />
             }    
         </main> 

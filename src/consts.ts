@@ -1,7 +1,7 @@
-export const MAX_LOGIN_VALUE_LENGTH = 10;       
+export const MAX_LOGIN_VALUE_LENGTH = 15;       
 export const MIN_LOGIN_VALUE_LENGTH = 3;   
 
-export const BASIC_URL = 'http://api.basket-team.q91711ta.beget.tech';
+export const BASIC_URL = 'http://api.basket-teams.gorod-web.ru';
 
 export enum AuthorizationStatus {
     Auth = 'AUTH',
@@ -10,18 +10,19 @@ export enum AuthorizationStatus {
 }
 
 export enum PlayerAPIRoute {
-    AddPlayer = '/v1/players/add-player',    
-    GetPlayersList = '/v1/players/list',    
-    DeletePlayer = '/v1/players/delete-player',    
-    UpdatePlayer = '/v1/players/update-player',    
+    AddPlayer = '/api/players/add',    
+    GetPlayersList = '/api/players/list',    
+    DeletePlayer = '/api/players/delete',    
+    UpdatePlayer = '/api/players/update',    
 }
 
 export enum UserAPIRoute {
-    UserRegister = '/v1/users/register',
-    UserName = '/v1/users/user-name',
+    UserRegister = '/api/users/register', 
+    UserAuth = '/api/users/token', 
+    UserName = '/api/users/name'   
 }
 
 export enum TeamAPIRoute {
-    CreateTeam = '/v1/team/teams',
-    TeamSize = '/v1/team/teams-sizes',
+    GetTeam = '/api/teams/get-teams',
+    TeamSize = '/api/teams/teams-size',
 }

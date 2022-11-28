@@ -33,8 +33,7 @@ function Player({player, updatePlayersList}: PlayerProps): JSX.Element {
                         handleCheckboxChange(setIsActive);
                         updatePlayer(
                             {...player, active: !isActive},                            
-                            updatePlayersList,
-                            shake
+                            updatePlayersList
                         );
                     }}                     
                 />  
@@ -53,8 +52,7 @@ function Player({player, updatePlayersList}: PlayerProps): JSX.Element {
                             handleCheckboxChange(setIsHigh);
                             updatePlayer(                               
                                 {...player, high: !isHigh},
-                                updatePlayersList,
-                                shake
+                                updatePlayersList
                             );
                         }}                     
                     />                          
@@ -66,8 +64,7 @@ function Player({player, updatePlayersList}: PlayerProps): JSX.Element {
                     className='btn delete-btn shaked-element'
                     onClick={() => deletePlayer(
                         id,
-                        updatePlayersList,
-                        shake
+                        updatePlayersList                        
                     )}
                 >X</button>
             </div>               

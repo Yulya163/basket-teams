@@ -2,7 +2,6 @@ import { PlayersType, PlayerType } from '../../types/player';
 import Player from '../player/player';
 import './players.css';
 import { deletePlayer } from '../../services/players-service/delete-player';
-import {shake} from '../../utils';
 
 type PlayersProps = {
     players: PlayersType | never[];
@@ -24,8 +23,7 @@ function Players({players, updatePlayersList}: PlayersProps): JSX.Element {
             if(player.id) {
                 deletePlayer(
                 player.id,
-                updatePlayersList,
-                shake
+                updatePlayersList                
             )}         
         })
     }
@@ -38,7 +36,7 @@ function Players({players, updatePlayersList}: PlayersProps): JSX.Element {
             <div className='players--list'>  
                 {
                     availablePlayers.length < 3 && players.length !== 0 ?
-                    <h4 className='incorrect'>To create teams, there must be at least 3 available players</h4> :
+                    <h4 className='incorrect-message'>To create teams, there must be at least 3 available players</h4> :
                     null
                 }                
                 {

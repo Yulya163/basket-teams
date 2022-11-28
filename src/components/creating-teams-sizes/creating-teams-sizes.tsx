@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import { getTeamsSizes } from '../../services/teams-service/teams-sizes';
-import { getTeams } from '../../services/teams-service/teams';
+import { getTeams } from '../../services/teams-service/get-teams';
 import { TeamType, TeamsOption } from '../../types/team';
 import { PlayersType } from '../../types/player';
-import {shake} from '../../utils';
 
 import './creating-teams-sizes.css';
 
@@ -44,10 +43,7 @@ function CreatingTeamsSizes(props: CreatingTeamsSizesProps): JSX.Element {
                     setTimeout(() => {
                         window.scrollTo(0, mainHeight || 9999)
                     }, 1000);  
-                    getTeamsSizes(
-                        setTeamsSizes,
-                        shake
-                    )
+                    getTeamsSizes(setTeamsSizes)
                     setIsShowTeamsBlock(true);                 
                 }}
             >
@@ -78,12 +74,12 @@ function CreatingTeamsSizes(props: CreatingTeamsSizesProps): JSX.Element {
                                         setTimeout(() => {
                                             window.scrollTo(0, mainHeight || 9999)
                                         }, 1000);                                           
+                                        setIsShowTeamsPlayers(true);
+                                        setOptionNumber(String(key + 1));                                                                                
                                         getTeams(
                                             {teams},
                                             setTeamsPlayers 
                                         );  
-                                        setIsShowTeamsPlayers(true);
-                                        setOptionNumber(String(key + 1));                                                                                
                                     }}
                                 >
                                     {!isShowTeamsPlayers ? 'Choose' : 'Refresh players'}

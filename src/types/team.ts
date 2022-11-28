@@ -11,7 +11,7 @@ export type TeamType = {
 export type TeamsType = TeamType[] & [];
 
 export type TeamsOption = {
-    teams: TeamsType;
+    teams: TeamsType | never[];
     totalQuantityPlayers?: number;
 };
 

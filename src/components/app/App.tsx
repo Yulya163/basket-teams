@@ -1,6 +1,6 @@
 import Header from '../header/header';
 import Main from '../../pages/main/main';
-import Login from '../../pages/login/login';
+import Form from '../../pages/form/form';
 import Loading from '../../pages/loading/loading';
 import { getToken } from '../../services/token';
 import { useState, useEffect } from 'react';
@@ -34,7 +34,7 @@ function App(): JSX.Element {
       {
         authorizationStatus === AuthorizationStatus.Auth ?
         <Main /> :
-        <Login />
+        <Form />
       }
     </div>
   );

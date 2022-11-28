@@ -1,9 +1,14 @@
 import './error.css';
 
-function Error(): JSX.Element {
+type ErrorProps = {
+    errMessage: string;     
+}
+
+
+function Error({errMessage}: ErrorProps): JSX.Element {
     return (
         <div className="error error-center-position">
-            Something went wrong. Please try again later
+            Something went wrong. {errMessage}. Please try again later
         </div>
     )
 }

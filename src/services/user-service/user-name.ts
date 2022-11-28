@@ -9,17 +9,18 @@ export const getUserName = async (
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Basic ${getToken()}`,
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${getToken()}`,
         }
     })
         .then((response) => {            
             if (response.ok) {
-                return response.text();
+                return response.json();
             } 
             throw new Error('error');
       })      
         .then((userName) => {            
-            onSuccess(userName);
+            onSuccess(userName.name);
     })
         .catch(() => onError())
 }
